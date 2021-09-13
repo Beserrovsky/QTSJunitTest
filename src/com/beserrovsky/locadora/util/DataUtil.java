@@ -23,8 +23,16 @@ public class DataUtil {
 		return calendar.getTime();
 	}
 	
+	// Disconsider time, make it only based on date
 	public boolean verificarDatasIguais(Date data1, Date data2){
-		return (data1.getTime() == data2.getTime());
+			
+		Calendar calendar1 = Calendar.getInstance();
+		Calendar calendar2 = Calendar.getInstance();
+		calendar1.setTime(data1);
+		calendar2.setTime(data2);
+		
+		return (calendar1.get(Calendar.YEAR) == calendar2.get(Calendar.YEAR) &&
+				calendar1.get(Calendar.DAY_OF_YEAR) == calendar2.get(Calendar.DAY_OF_YEAR));
 	}
 
 }

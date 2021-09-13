@@ -16,6 +16,7 @@ public class LocacaoService {
 	{
 		
 		if(jogo.getQtdEstoque() == 0) throw new NoStockException();
+		if(jogo.getValor() == 0) throw new NoValueException();
 		
 		Locacao locacao = new Locacao();
 		locacao.setCliente(cliente);
@@ -27,4 +28,5 @@ public class LocacaoService {
 		locacao.setDevolucao(devolucao);
 		return locacao;
 	}
+	
 }

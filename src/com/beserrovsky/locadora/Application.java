@@ -26,4 +26,5 @@ public class Application {
 		InputStream is = new FileInputStream("meuArq.txt");
 		is.close();
 	}
+	
 }
